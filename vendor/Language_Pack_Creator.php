@@ -132,15 +132,15 @@ class Language_Pack_Creator {
 				if ( false !== stristr( $package, $translation ) ) {
 					$arr[ $translation ]['slug']       = stristr( $translation, strrchr( $translation, '-' ), true );
 					$arr[ $translation ]['language']   = ltrim( strrchr( $translation, '-' ), '-' );
-					$arr[ $translation ]['updated']    = date( 'Y-m-d H:i:s', filemtime( $this->packages_dir . '/' . $package ) );
+					$arr[ $translation ]['updated']    = date( 'Y-m-d H:i:s', filemtime( $this->packages[ $translation ][0] ) );
 					$arr[ $translation ]['package']    = '/packages/' . $package;
 					$arr[ $translation ]['autoupdate'] = '1';
 				}
 			}
 		}
 
-		file_put_contents( dirname( __DIR__ ) . '/language-pack.json', json_encode($arr ));
-		printf( 'language-pack.json created.' ."\n<br>");
+		file_put_contents( dirname( __DIR__ ) . '/language-pack.json', json_encode( $arr ) );
+		printf( "\n<br>" . 'language-pack.json created.' . "\n<br>" );
 	}
 
 }
