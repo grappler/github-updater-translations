@@ -8,4 +8,5 @@
 
 require_once 'Language_Pack_Creator.php';
 
+echo '<h2>Generating Language Pack Zip Files and JSON file</h2>';
 new \Fragen\GitHub_Updater\Language_Pack_Creator();
