@@ -1,0 +1,15 @@
+[
+  {
+    "translations": [
+      {
+        "type": "plugin | theme from GitHub Updater",
+        "slug": "slug",
+        "language": "en_US",
+        "version": "from GitHub Updater",
+        "updated": "timestamp 2016-05-12 18:04:38",
+        "package": "relative path to zip file",
+        "autoupdate": "1"
+      }
+    ]
+  }
+]
