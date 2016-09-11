@@ -9,7 +9,7 @@
 namespace Fragen\GitHub_Updater;
 
 
-class Language_Pack_Creator {
+class Language_Pack_Maker {
 
 	private $locales;
 
@@ -19,13 +19,16 @@ class Language_Pack_Creator {
 
 	private $packages;
 
+	private $root_dir;
+
 	private $language_files_dir;
 
 	private $packages_dir;
 
 	public function __construct() {
-		$this->language_files_dir = dirname( __DIR__ ) . '/languages';
-		$this->packages_dir       = dirname( __DIR__ ) . '/packages';
+		$this->root_dir           = dirname( dirname( __DIR__ ) );
+		$this->language_files_dir = $this->root_dir . '/languages';
+		$this->packages_dir       = $this->root_dir . '/packages';
 		@mkdir( $this->packages_dir, 0777 );
 
 		$this->directory_list = $this->list_directory( $this->language_files_dir );
@@ -139,7 +142,7 @@ class Language_Pack_Creator {
 			}
 		}
 
-		file_put_contents( dirname( __DIR__ ) . '/language-pack.json', json_encode( $arr ) );
+		file_put_contents( $this->root_dir . '/language-pack.json', json_encode( $arr ) );
 		printf( "\n<br>" . 'language-pack.json created.' . "\n<br>" );
 	}
 

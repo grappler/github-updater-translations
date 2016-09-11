@@ -42,3 +42,4 @@ $transient->translations( array(
 
 GitHub Updater with merge the correlative plugin or theme data with the data retrieved from the `language-pack.json` to add data to the update transient.
 
+To utilize the Language Pack Creator, you will need to open `vendor/github-updater-language-pack-maker/index.php` in localhost.
