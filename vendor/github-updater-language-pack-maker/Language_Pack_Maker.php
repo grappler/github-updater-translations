@@ -122,7 +122,7 @@ class Language_Pack_Maker {
 		if ( file_exists( $destination ) ) {
 			printf( basename( $destination ) . ' created.' . "\n<br>" );
 		} else {
-			printf( basename( $destination ) . ' failed.' . "\n<br>" );
+			printf( '<span style="color:#f00">' . basename( $destination ) . ' failed.</span>' . "\n<br>" );
 		}
 	}
 
